@@ -1,3 +1,4 @@
+import 'package:bank/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -6,20 +7,38 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool changebutton = false;
+
+  moveToUserScreen(BuildContext context) async {
+    setState(() {
+      changebutton = true;
+    });
+    await Future.delayed(Duration(seconds: 1));
+    await Navigator.pushNamed(context, MyRoutes.usersRoute);
+    setState(() {
+      changebutton = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(
         color: Colors.white,
         child: SingleChildScrollView(
           child: Column(
+            //crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: 80),
+              SizedBox(height: 50),
+              Image.asset(
+                "lib/utils/home1.png",
+                height: 150,
+              ),
               Image.asset(
                 'lib/utils/home.png',
                 fit: BoxFit.cover,
                 height: 320,
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 30),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   vertical: 30,
@@ -31,39 +50,25 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: Colors.blueAccent,
                       borderRadius: BorderRadius.circular(100),
                       child: InkWell(
+                        onTap: () => moveToUserScreen(context),
                         child: AnimatedContainer(
                             duration: Duration(seconds: 1),
                             height: 70,
-                            width: 200,
+                            width: changebutton ? 70 : 180,
                             alignment: Alignment.center,
-                            child: Text(
-                              "Veiw All Customers",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                              ),
-                            )),
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    Material(
-                      color: Colors.blueAccent,
-                      borderRadius: BorderRadius.circular(100),
-                      child: InkWell(
-                        child: AnimatedContainer(
-                            duration: Duration(seconds: 1),
-                            height: 70,
-                            width: 200,
-                            alignment: Alignment.center,
-                            child: Text(
-                              "Transfer Money",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                              ),
-                            )),
+                            child: changebutton
+                                ? Icon(
+                                    Icons.done,
+                                    color: Colors.white,
+                                  )
+                                : Text(
+                                    "All Users",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                    ),
+                                  )),
                       ),
                     ),
                   ],

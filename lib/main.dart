@@ -1,4 +1,6 @@
 import 'package:bank/screens/home.dart';
+import 'package:bank/screens/users.dart';
+import 'package:bank/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,12 +13,13 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: ThemeData(
         primarySwatch: Colors.grey,
-        fontFamily: GoogleFonts.lato().fontFamily,
+        fontFamily: GoogleFonts.poppins().fontFamily,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: "/home",
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         "/home": (context) => HomeScreen(),
+        "/users": (context) => UsersScreen(),
       },
     );
   }
