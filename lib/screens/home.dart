@@ -30,11 +30,11 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               SizedBox(height: 50),
               Image.asset(
-                "lib/utils/home1.png",
+                "lib/assets/images/home1.png",
                 height: 150,
               ),
               Image.asset(
-                'lib/utils/home.png',
+                'lib/assets/images/home.png',
                 fit: BoxFit.cover,
                 height: 320,
               ),
@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   children: [
                     Material(
-                      color: Colors.blueAccent,
+                      color: Colors.cyan,
                       borderRadius: BorderRadius.circular(100),
                       child: InkWell(
                         onTap: () => moveToUserScreen(context),

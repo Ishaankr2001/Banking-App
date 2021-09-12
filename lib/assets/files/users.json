@@ -1,0 +1,94 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Ashish",
+            "email": "Ashu78@gmail.com",
+            "contact": 9336543210,
+            "ifsc":51626,
+            "accountno": 745716466187,
+            "balance":15000
+        },
+        {
+            "id": 2,
+            "name": "Ravi",
+            "email": "Ravi512@gmail.com",
+            "contact": 9865217727,
+            "ifsc":74599,
+            "accountno": 745816464512,
+            "balance":10000
+        },
+        {
+            "id": 3,
+            "name": "Nitin",
+            "email": "Nitin822@gmail.com",
+            "contact": 7898821036,
+            "ifsc":58416,
+            "accountno": 78616467458,
+            "balance":11000
+        },
+        {
+            "id": 4,
+            "name": "Manish",
+            "email": "Manish120@gmail.com",
+            "contact": 8889657412,
+            "ifsc":12587,
+            "accountno": 74586466415,
+            "balance":7500
+        },
+        {
+            "id": 5,
+            "name": "Harsh",
+            "email": "Harsh7854@gmail.com",
+            "contact": 9999458712,
+            "ifsc":74512,
+            "accountno": 74516466125,
+            "balance":7000
+        },
+        {
+            "id": 6,
+            "name": "Tushar",
+            "email": "Tushar1526@gmail.com",
+            "contact": 7899102546,
+            "ifsc":96587,
+            "accountno": 74516467451,
+            "balance":15000
+        },
+        {
+            "id": 7,
+            "name": "Nishant",
+            "email": "Nishat125@gmail.com",
+            "contact": 9911454702,
+            "ifsc":41288,
+            "accountno": 74516466474,
+            "balance":45000
+        },
+        {
+            "id": 8,
+            "name": "Shubham",
+            "email": "Shubham41@gmail.com",
+            "contact": 9991115240,
+            "ifsc":54123,
+            "accountno": 745164667452,
+            "balance":20500
+        },
+        {
+            "id": 9,
+            "name": "Raman",
+            "email": "Raman895@gmail.com",
+            "contact": 7874152200,
+            "ifsc":78411,
+            "accountno": 78516466446,
+            "balance":11000
+        },
+        {
+            "id": 10,
+            "name": "Piyush",
+            "email": "piyush452@gmail.com",
+            "contact": 8889965112,
+            "ifsc":99854,
+            "accountno": 386164664745,
+            "balance":8500
+        }
+    ]
+}
