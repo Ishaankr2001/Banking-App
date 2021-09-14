@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:bank/screens/details.dart';
 import 'package:bank/utils/userfile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -40,9 +41,7 @@ class _UsersScreenState extends State<UsersScreen> {
               if (Usr.person != null)
                 UserList().expand()
               else
-                Center(
-                  child: CircularProgressIndicator(),
-                )
+                CircularProgressIndicator().centered().expand(),
             ],
           ),
         ),
@@ -75,12 +74,15 @@ class PersonProfile extends StatelessWidget {
     return VxBox(
       child: Row(
         children: [
-          Image.asset('lib/assets/images/avatar.png')
-              .box
-              .roundedFull
-              .py12
-              .make()
-              .wOneThird(context),
+          Hero(
+            tag: Key(person.id.toString()),
+            child: Image.asset('lib/assets/images/avatar.png')
+                .box
+                .roundedFull
+                .py12
+                .make()
+                .wOneThird(context),
+          ),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -91,7 +93,13 @@ class PersonProfile extends StatelessWidget {
                 ButtonBar(
                   children: [
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Details(profile: person),
+                            ));
+                      },
                       style: ButtonStyle(
                           shape: MaterialStateProperty.all(StadiumBorder())),
                       child: "View Profile".text.white.make(),
